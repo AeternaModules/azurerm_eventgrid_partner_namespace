@@ -21,12 +21,12 @@ EOT
     name                         = string
     partner_registration_id      = string
     resource_group_name          = string
-    local_authentication_enabled = optional(bool, true)
-    partner_topic_routing_mode   = optional(string, "ChannelNameHeader")
-    public_network_access        = optional(string, "Enabled")
+    local_authentication_enabled = optional(bool)   # Default: true
+    partner_topic_routing_mode   = optional(string) # Default: "ChannelNameHeader"
+    public_network_access        = optional(string) # Default: "Enabled"
     tags                         = optional(map(string))
     inbound_ip_rule = optional(list(object({
-      action  = optional(string, "Allow")
+      action  = optional(string) # Default: "Allow"
       ip_mask = string
     })))
   }))
