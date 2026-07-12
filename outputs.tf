@@ -1,3 +1,7 @@
+output "eventgrid_partner_namespaces_id" {
+  description = "Map of id values across all eventgrid_partner_namespaces, keyed the same as var.eventgrid_partner_namespaces"
+  value       = { for k, v in azurerm_eventgrid_partner_namespace.eventgrid_partner_namespaces : k => v.id }
+}
 output "eventgrid_partner_namespaces_endpoint" {
   description = "Map of endpoint values across all eventgrid_partner_namespaces, keyed the same as var.eventgrid_partner_namespaces"
   value       = { for k, v in azurerm_eventgrid_partner_namespace.eventgrid_partner_namespaces : k => v.endpoint }
